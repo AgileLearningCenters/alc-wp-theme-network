@@ -18,20 +18,23 @@ if ( is_user_logged_in() ){
 
   infinity_get_header();
 ?>
-  <div id="content" role="main" class="<?php do_action( 'content_class' ); ?>">
-      <?php
-      do_action( 'open_content' );
-      do_action( 'open_home' );
-    ?>
-      <?php
-        infinity_get_template_part( 'templates/loops/loop', 'index' );
-      ?>
+  <div id="content-full" class="grid_24" role="main">
     <?php
-      do_action( 'close_home' );
+      do_action( 'open_content' );
+      do_action( 'open_page' );
+    ?>
+    <div class="page-<?php the_ID(); ?>" <?php post_class(); ?>>
+      <?php
+        infinity_get_template_part( 'templates/loops/loop', 'page' );
+      ?>
+    </div><!-- .page -->
+
+    <?php
+      do_action( 'close_page' );
       do_action( 'close_content' );
     ?>
   </div>
+
 <?php
-  infinity_get_sidebar();
   infinity_get_footer();
 ?>
