@@ -12,7 +12,7 @@
  */
 
 if ( is_user_logged_in() ){
-  wp_redirect( 'http://agilelearningcenters.org/activity/' );
+  wp_redirect( '/activity/' );
   exit;
 }
 
